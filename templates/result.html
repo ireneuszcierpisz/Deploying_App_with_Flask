@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" type="text/css" 
+        href="{{url_for('static', filename='css/template.css') }}"
+    </head>
+    <body>
+        {% extends "template.html" %}
+        {% block content %}
+        <div class="row">
+            <div class="column">
+                </br>
+                <h3>Artificial Intelligence</h3> 
+                <h4>Flowers Recognition App</h4>
+                <strong><nav>
+                    <ul class="menu">
+                        <li><a href="{{ url_for('home') }}">Click to upload new image</a></li>
+                    </ul>
+                </nav></strong>
+            </div>
+            <div class="column">
+                <p style="color:black; font-size:30;text-align:left;">
+                    <b>The Image you've uploaded:</b>
+                </p>
+                {% if image_name %}
+                <p>
+                    <img src="{{url_for('uploaded_file', filename=image_name)}}" width=150 height=150>
+                </p>
+                {% else %}
+                <h2>No image given :(</h2>
+                {% endif %}                
+            </div>
+            <div class="column">
+                <p style="color:white; font-size:30;text-align:left;">
+                    <b>Results using pretrained CNN densenet121:</b>
+                </p>
+                <!-- <h5>I suggest this is the</h5> -->
+                <h2 style="color: grey;">{{p_name}}</h2>
+                <h2 style="color: #07457e;">Probability: {{prob}}%</h2>
+            </div>
+            <div class="column">
+                <h5 style="color: green;">The example of the suggested class of flowers:</h5>
+                <p>
+                    <img src="{{ url_for('static', filename=ipath) }}" width=150 height=150 alt='Can not display a picture of the predicted flower'>
+                </p>
+            </div>
+        </div>
+        <strong><nav>
+            <ul class="menu">
+                <li><a href="{{ url_for('about') }}">About</a></li>
+            </ul>
+        </nav></strong>
+    
+        {% endblock %}
+    </body>
+</html>

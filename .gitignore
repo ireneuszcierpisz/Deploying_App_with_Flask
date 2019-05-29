@@ -1,0 +1,10 @@
+# ignore all .jpg files in the flowers/ directory and any of its subdirectories
+flowers/**/*.jpg
+# ignore cat_to_name file
+cat_to_name.json
+# ignore checkpoint
+checkpoint/flower102_checkpoint.pth
+#ignore all uploaded files
+uploads/*.*
+#ignore all files in the images dir
+static/images/**/*.jpg

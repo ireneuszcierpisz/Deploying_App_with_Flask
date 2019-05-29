@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Flask Parent Template</title>
+        <link rel="stylesheet" type="text/css" 
+        href="{{ url_for('static', filename='css/template.css') }}">
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <h2 class="description">Erick - PyTorch Image Classifier</h2>
+                Deploying PyTorch model with Flask
+            </div>
+        </header>
+
+        {% block content %}
+        {% endblock %}
+
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Check flowers</title>
+    </head>
+    <body>
+        {% extends "template.html" %}
+        {% block content %}
+        
+        <div class="container">
+            <h3 id="h3">Please upload the image and wait few seconds for the result.</h3>
+            <form action="{{ url_for('result') }}" method="POST" enctype="multipart/form-data">
+
+                <p><input type="file" accept="image/*" name='image' onchange="loadFile(event)"></p>
+                <p><img id="output" width="150" height="150"/></p>
+                <script>
+                var loadFile = function(event) {
+                    var output = document.getElementById('output');
+                    output.src = URL.createObjectURL(event.target.files[0]);
+                };
+                </script>
+                                
+                <input type='submit' value='Upload'>
+            </form>
+        </div>
+        <strong><nav>
+            <ul class="menu">
+                <li><a href="{{ url_for('about') }}">About</a></li>
+            </ul>
+        </nav></strong>
+
+        {% endblock %}
+    </body>
+</html>
