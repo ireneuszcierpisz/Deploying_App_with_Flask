@@ -1,4 +1,4 @@
-#from :
+#thanks:
 # https://medium.freecodecamp.org/how-to-build-a-web-application-using-flask-and-deploy-it-to-the-cloud-3551c985e492
 #https://towardsdatascience.com/develop-a-nlp-model-in-python-deploy-it-with-flask-step-by-step-744f3bdd7776
 #https://medium.com/datadriveninvestor/deploy-your-pytorch-model-to-production-f69460192217?FGa=true
